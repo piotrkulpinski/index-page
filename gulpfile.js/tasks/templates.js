@@ -12,6 +12,7 @@ var templatesTask = function (gulp, plugins, config, helpers) {
 
     stream
       .pipe(plugins.prettify({ indent_size: 2, preserve_newlines: true, extra_liners: [] }))
+      .pipe(plugins.inlineSource())
       .pipe(gulp.dest(dest));
 
     return stream;

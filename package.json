@@ -10,13 +10,14 @@
     "src": "src",
     "dest": "dist"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "autoprefixer": "^6.0.3",
     "browser-sync": "^2.9.6",
     "del": "^2.0.2",
     "glob": "^5.0.14",
     "gulp": "^3.9.0",
     "gulp-css-globbing": "^0.1.8",
+    "gulp-inline-source": "^2.1.0",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-plumber": "^1.0.1",
