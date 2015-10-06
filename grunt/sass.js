@@ -8,14 +8,7 @@ module.exports = function(grunt) {
     dist: {
       options: {
         outputStyle: 'compressed',
-        imagePath: '../img',
-        includePaths: [
-          '<%= xh.src %>/bower_components'
-        ],
-        sourceMap: false
-        // for some reason sourceMaps will have correct path only when
-        // absolute source map path is used
-        // sourceMap: '<%= xh.root %>/<%= xh.dist %>/css/main.css.map'
+        imagePath: '../img'
       },
       files: {
         '<%= xh.dist %>/css/main.css': '<%= xh.src %>/scss/main.scss'
