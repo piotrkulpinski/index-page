@@ -1,17 +1,20 @@
-@@include('head.<%= extension %>', {"pagename": "<%= name %>"})
+{% include 'includes/head.<%= extension %>' with {'pageName': '<%= name %>' } %}
 
 <body>
 
-@@include('header.<%= extension %>')
+{% include 'includes/header.<%= extension %>' %}
 
-  <div class="content" id="content">
-    <p>content</p>
-  </div>
-  <!-- / content -->
+<div class="clearfix">
+  <section class="inner-content">
+    <h2 class="heading"><%= name %></h2>
+  </section>
+  <!-- / inner-content -->
 
-@@include('sidebar.<%= extension %>')
-@@include('footer.<%= extension %>')
-@@include('scripts.<%= extension %>')
+  {% include 'includes/sidebar.<%= extension %>' %}
+</div>
+<!-- / clearfix -->
+
+{% include 'includes/footer.<%= extension %>' %}
 
 </body>
 </html>

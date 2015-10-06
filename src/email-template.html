@@ -1,8 +1,8 @@
-@@include('head.html', {"pagename": "Email Template"})
+{% include 'includes/head.html' with {'pageName': 'Email Template' } %}
 
 <body>
 
-@@include('header.html')
+{% include 'includes/header.html' %}
 
 <div class="clearfix">
   <section class="inner-content">
@@ -57,11 +57,11 @@
   </section>
   <!-- / inner-content -->
 
-  @@include('sidebar.html')
+  {% include 'includes/sidebar.html' %}
 </div>
 <!-- / clearfix -->
 
-@@include('footer.html')
+{% include 'includes/footer.html' %}
 
 </body>
 </html>
