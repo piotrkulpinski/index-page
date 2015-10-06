@@ -1,0 +1,32 @@
+
+// Variables
+//------------------------------------------------------------------------------
+
+// Color definitions
+$color-white: #fff !default;
+$color-blue-dark: darken(#3bb3e1, 20%) !default;
+$color-blue: #3bb3e1 !default;
+$color-green: #66b639 !default;
+$color-gray-dark: #333 !default;
+$color-gray: #666 !default;
+$color-gray-light: #aaa !default;
+$color-gray-lighter: #eee !default;
+
+// Container definitions
+$container-width: 960px !default;
+$container-padding: 20px !default;
+$container-padding-inner: 40px !default;
+
+// Z-indexes
+$zindex-base: 1 !default;
+
+// Font definitions
+$font-karla: "Karla", "Arial", "Helvetica Neue", Helvetica, serif !default;
+$font-size: 1.6em !default;
+$font-line-height: 1.4 !default;
+
+// Breakpoint definitions
+$breakpoints: (
+  'tiny':  480px,
+  'small':  768px
+) !default;

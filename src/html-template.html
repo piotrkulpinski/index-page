@@ -1,0 +1,55 @@
+@@include('head.html', {"pagename": "HTML Template"})
+
+<body>
+
+@@include('header.html')
+
+<div class="clearfix">
+  <section class="inner-content">
+    <h2 class="heading">Standard files:</h2>
+
+    <ul class="file-list">
+      <li class="file-list-element">
+        <div class="file-list-title">
+          <i class="fa fa-file-text-o"></i>
+          <a href="#">About Us</a>
+        </div>
+
+        <div class="file-types">
+          <p>about-us.html</p>
+        </div>
+      </li>
+
+      <li class="file-list-element">
+        <div class="file-list-title">
+          <i class="fa fa-file-text-o"></i>
+          <a href="#">Contact Info</a>
+        </div>
+
+        <div class="file-types">
+          <p>contact-info.html</p>
+        </div>
+      </li>
+
+      <li class="file-list-element">
+        <div class="file-list-title">
+          <i class="fa fa-file-text-o"></i>
+          <a href="#">Shopping Cart</a>
+        </div>
+
+        <div class="file-types">
+          <p>shopping-cart.html</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <!-- / inner-content -->
+
+  @@include('sidebar.html')
+</div>
+<!-- / clearfix -->
+
+@@include('footer.html')
+
+</body>
+</html>

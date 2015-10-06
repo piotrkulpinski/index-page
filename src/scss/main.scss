@@ -1,0 +1,211 @@
+/* =========================================================================
+
+    Project: Page index
+    Author:
+    Last updated: @@timestamp
+@@toc
+
+   ========================================================================= */
+
+// Authored Dependencies
+@import "setup/variables";
+@import "setup/mixins";
+
+// Common styles & layouts
+@import "common/base";
+@import "common/layout";
+
+// Components
+.page {
+  &-head {
+    padding-bottom: $container-padding-inner;
+
+    @include respond-to(small) {
+      padding-bottom: $container-padding-inner * 2;
+    }
+  }
+
+  &-title {
+    color: $color-green;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+
+    @include respond-to(small) {
+      font-size: 3.6rem;
+    }
+  }
+
+  &-subtitle {
+    color: $color-gray;
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+
+  &-foot {
+    @include clearfix;
+    clear: both;
+    padding-top: $container-padding-inner;
+    margin-top: $container-padding-inner;
+    border-top: 1px solid $color-gray-lighter;
+    color: $color-gray-light;
+    font-size: 1.4rem;
+    text-align: center;
+
+    @include respond-to(small) {
+      margin-top: $container-padding-inner * 2;
+    }
+
+    a {
+      color: $color-gray;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-date {
+      @include respond-to(small) {
+        float: left;
+      }
+
+      strong {
+        color: $color-gray;
+        font-weight: 600;
+      }
+    }
+
+    &-powered {
+      margin-top: 10px;
+
+      @include respond-to(small) {
+        float: right;
+        margin-top: 0;
+        margin-left: 20px;
+      }
+    }
+
+    .fa, img {
+      margin-right: 5px;
+    }
+
+    img {
+      display: inline-block;
+      width: 12px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.heading {
+  margin-top: $container-padding * 1.5;
+  margin-bottom: $container-padding;
+  font-size: 2rem;
+  font-weight: 600;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include respond-to(small) {
+    font-size: 2.6rem;
+  }
+}
+
+.status {
+  color: $color-gray-light;
+  font-weight: normal;
+
+  .fa {
+    margin-right: 0.5em;
+  }
+}
+
+.text {
+  color: $color-gray-light;
+
+  &--lead {
+    color: $color-gray;
+  }
+
+  & + & {
+    margin-top: 1em;
+  }
+}
+
+.file-list {
+  @include respond-to(small) {
+    margin-bottom: $container-padding-inner * 1.25;
+  }
+
+  &-element {
+    @include clearfix;
+    margin-top: 0.75em;
+    padding-top: 0.75em;
+    border-top: 1px solid $color-gray-lighter;
+    font-size: 1.6rem;
+
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    @include respond-to(small) {
+      font-size: 2rem;
+    }
+  }
+
+  &-title {
+    float: left;
+
+    > .fa {
+      float: left;
+      margin-right: 0.5em;
+      color: $color-gray-lighter;
+      font-size: 2.4rem;
+
+      @include respond-to(small) {
+        font-size: 2.8rem;
+      }
+    }
+
+    strong {
+      font-weight: normal;
+    }
+  }
+}
+
+.file-types {
+  float: right;
+  margin-left: 1em;
+  font-size: 1.4rem;
+  line-height: 2;
+
+  h4 {
+    display: none;
+
+    @include respond-to(small) {
+      display: block;
+    }
+  }
+
+  p {
+    color: $color-gray-light;
+  }
+
+  h4,
+  ul,
+  li {
+    float: left;
+  }
+
+  li {
+    margin-left: 0.5em;
+
+    @include respond-to(small) {
+      margin-left: 1em;
+    }
+  }
+}
