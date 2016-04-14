@@ -1,0 +1,34 @@
+/*
+** Setup - Variables
+** -----------------------------------------------------------------------------*/
+
+// Color definitions
+$color-red:               #ce312d !default;
+$color-gray-dark:         #333333 !default;
+$color-gray:              #666666 !default;
+$color-gray-light:        #aaaaaa !default;
+$color-gray-lighter:      #eeeeee !default;
+$color-black:             #000000 !default;
+$color-white:             #ffffff !default;
+
+// Container definitions
+$container-width:         960px !default;
+$container-padding:       20px !default;
+$container-padding-inner: 40px !default;
+
+// Z-indexes
+$zindex-base:             1 !default;
+
+// Font definitions
+$font-lato:              'Lato', 'Arial', 'Helvetica Neue', Helvetica, serif !default;
+
+$font-size:               1.6em !default;
+$font-color:              $color-gray !default;
+$font-family:             $font-lato !default;
+$font-line-height:        1.4 !default;
+
+// Breakpoint definitions
+$breakpoints: (
+  'tiny':  480px,
+  'sm':  768px
+) !default;

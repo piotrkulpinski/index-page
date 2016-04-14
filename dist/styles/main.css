@@ -1,0 +1,423 @@
+/*!
+** Project: Page index
+** Author: Piotr Kulpinski
+** --------------------------------
+**/
+/*
+** Setup - Variables
+** -----------------------------------------------------------------------------*/
+/*
+** Setup - Mixins
+** -----------------------------------------------------------------------------*/
+/*
+** Mixin to manage responsive breakpoints
+**
+** @access public
+** @param {String} $breakpoint - Breakpoint name
+** @require $grid-breakpoints
+**/
+/*
+** Setup - Normalize
+** -----------------------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+:root {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  word-wrap: break-word;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body::before {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  body::before {
+    content: "tiny";
+  }
+}
+
+@media (min-width: 768px) {
+  body::before {
+    content: "sm";
+  }
+}
+
+a, button, [type="button"] {
+  cursor: pointer;
+  color: currentColor;
+  text-decoration: none;
+}
+
+a:focus, button:focus, [type="button"]:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+sub,
+sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.4em;
+}
+
+/*
+** Setup - Base
+** -----------------------------------------------------------------------------*/
+body {
+  background: #f5f5f5;
+  color: #666666;
+  font-family: "Lato", "Arial", "Helvetica Neue", Helvetica, serif;
+  font-size: 1.6em;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 20px;
+  }
+}
+
+a, button {
+  color: #ce312d;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  -webkit-transition-property: color, background-color, border, opacity;
+  transition-property: color, background-color, border, opacity;
+}
+
+a:hover, button:hover {
+  color: #8f221f;
+}
+
+/*
+** Common - Layout
+** -----------------------------------------------------------------------------*/
+.body-bag {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+}
+
+@media (min-width: 768px) {
+  .body-bag {
+    padding: 40px;
+  }
+}
+
+/* Container */
+.container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+.content {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .inner-content {
+    float: left;
+    width: 60%;
+  }
+}
+
+.inner-sidebar {
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .inner-sidebar {
+    float: right;
+    width: 40%;
+    padding-left: 10%;
+    margin-top: 0;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+** Module - Content
+** -----------------------------------------------------------------------------*/
+.page-head {
+  padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .page-head {
+    padding-bottom: 80px;
+  }
+}
+
+.page-title {
+  color: #ce312d;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 3.6rem;
+  }
+}
+
+.page-subtitle {
+  color: #666666;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.page-foot {
+  clear: both;
+  padding-top: 40px;
+  margin-top: 40px;
+  border-top: 1px solid #eeeeee;
+  color: #aaaaaa;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.page-foot:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  .page-foot {
+    margin-top: 80px;
+  }
+}
+
+.page-foot a {
+  color: #666666;
+}
+
+.page-foot a:hover {
+  text-decoration: underline;
+}
+
+.page-foot strong {
+  color: #666666;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .page-foot-date {
+    float: left;
+  }
+}
+
+.page-foot-powered {
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .page-foot-powered {
+    float: right;
+    margin-top: 0;
+    margin-left: 20px;
+  }
+}
+
+.page-foot .fa, .page-foot img {
+  margin-right: 5px;
+}
+
+.page-foot img {
+  display: inline-block;
+  width: 12px;
+  vertical-align: middle;
+}
+
+.heading {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.heading:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 2.6rem;
+  }
+}
+
+.status {
+  color: #aaaaaa;
+  font-weight: normal;
+}
+
+.status .fa {
+  margin-right: 0.5em;
+}
+
+.text {
+  color: #aaaaaa;
+}
+
+.text--lead {
+  color: #666666;
+}
+
+.text + .text {
+  margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+  .file-list {
+    margin-bottom: 50px;
+  }
+}
+
+.file-list-element {
+  margin-top: 0.75em;
+  padding-top: 0.75em;
+  border-top: 1px solid #eeeeee;
+  font-size: 1.6rem;
+}
+
+.file-list-element:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.file-list-element:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+@media (min-width: 768px) {
+  .file-list-element {
+    font-size: 2rem;
+  }
+}
+
+.file-list-title {
+  float: left;
+}
+
+.file-list-title > .fa {
+  float: left;
+  margin-right: 0.5em;
+  color: #eeeeee;
+  font-size: 2.4rem;
+}
+
+@media (min-width: 768px) {
+  .file-list-title > .fa {
+    font-size: 2.8rem;
+  }
+}
+
+.file-list-title strong {
+  font-weight: normal;
+}
+
+.file-types {
+  float: right;
+  margin-left: 1em;
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+.file-types h4 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .file-types h4 {
+    display: block;
+  }
+}
+
+.file-types p {
+  color: #aaaaaa;
+}
+
+.file-types h4,
+.file-types ul,
+.file-types li {
+  float: left;
+}
+
+.file-types li {
+  margin-left: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .file-types li {
+    margin-left: 1em;
+  }
+}

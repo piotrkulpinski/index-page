@@ -1,0 +1,41 @@
+{% extends 'layouts/default.twig' %}
+{% set pageName = 'HTML' %}
+
+{% block content %}
+  <h2 class="heading">Template files:</h2>
+
+  <ul class="file-list">
+    <li class="file-list-element">
+      <div class="file-list-title">
+        <i class="fa fa-file-text-o"></i>
+        <a href="#">About Us</a>
+      </div>
+
+      <div class="file-types">
+        <p>about-us.html</p>
+      </div>
+    </li>
+
+    <li class="file-list-element">
+      <div class="file-list-title">
+        <i class="fa fa-file-text-o"></i>
+        <a href="#">Contact Info</a>
+      </div>
+
+      <div class="file-types">
+        <p>contact-info.html</p>
+      </div>
+    </li>
+
+    <li class="file-list-element">
+      <div class="file-list-title">
+        <i class="fa fa-file-text-o"></i>
+        <a href="#">Shopping Cart</a>
+      </div>
+
+      <div class="file-types">
+        <p>shopping-cart.html</p>
+      </div>
+    </li>
+  </ul>
+{% endblock %}

@@ -2,8 +2,8 @@
 
 var stylesTask = function (gulp, plugins, config, helpers) {
   gulp.task('styles', function () {
-    var src = config.src + '/scss/main.scss';
-    var dest = config.dest + '/css';
+    var src = config.paths.src + '/styles/*.scss';
+    var dest = config.paths.dest + '/styles';
 
     var postcssPlugins = [
       require('autoprefixer')()
@@ -11,11 +11,11 @@ var stylesTask = function (gulp, plugins, config, helpers) {
 
     var stream = gulp.src(src)
       .pipe(plugins.plumber(helpers.onError))
-      .pipe(plugins.cssGlobbing({ extensions: ['.scss', '.sass'] }))
+      .pipe(plugins.cssGlobbing({ extensions: ['.scss', '.css'] }))
       .pipe(plugins.sass({ outputStyle: 'expanded' }))
       .pipe(plugins.postcss(postcssPlugins))
-      .pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
-      .pipe(gulp.dest(dest));
+      .pipe(gulp.dest(dest))
+      .pipe(plugins.browserSync.stream());
 
     return stream;
   });

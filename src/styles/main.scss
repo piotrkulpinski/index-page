@@ -1,38 +1,34 @@
-/* =========================================================================
+/*!
+** Project: Page index
+** Author: Piotr Kulpinski
+** --------------------------------
+**/
 
-    Project: Page index
-    Author:
-    Last updated: @@timestamp
-@@toc
+@import 'setup/variables';
+@import 'setup/mixins';
+@import 'setup/normalize';
 
-   ========================================================================= */
-
-// Authored Dependencies
-@import "setup/variables";
-@import "setup/mixins";
-
-// Common styles & layouts
-@import "common/base";
-@import "common/layout";
+@import 'common/*';
+@import 'modules/*';
 
 // Components
 .page {
   &-head {
     padding-bottom: $container-padding-inner;
 
-    @include respond-to(small) {
+    @include breakpoint(sm) {
       padding-bottom: $container-padding-inner * 2;
     }
   }
 
   &-title {
-    color: $color-green;
+    color: $color-red;
     font-size: 3rem;
     font-weight: bold;
     line-height: 1.4;
     letter-spacing: -0.02em;
 
-    @include respond-to(small) {
+    @include breakpoint(sm) {
       font-size: 3.6rem;
     }
   }
@@ -53,7 +49,7 @@
     font-size: 1.4rem;
     text-align: center;
 
-    @include respond-to(small) {
+    @include breakpoint(sm) {
       margin-top: $container-padding-inner * 2;
     }
 
@@ -65,21 +61,21 @@
       }
     }
 
-    &-date {
-      @include respond-to(small) {
-        float: left;
-      }
+    strong {
+      color: $color-gray;
+      font-weight: 600;
+    }
 
-      strong {
-        color: $color-gray;
-        font-weight: 600;
+    &-date {
+      @include breakpoint(sm) {
+        float: left;
       }
     }
 
     &-powered {
       margin-top: 10px;
 
-      @include respond-to(small) {
+      @include breakpoint(sm) {
         float: right;
         margin-top: 0;
         margin-left: 20px;
@@ -108,7 +104,7 @@
     margin-top: 0;
   }
 
-  @include respond-to(small) {
+  @include breakpoint(sm) {
     font-size: 2.6rem;
   }
 }
@@ -135,7 +131,7 @@
 }
 
 .file-list {
-  @include respond-to(small) {
+  @include breakpoint(sm) {
     margin-bottom: $container-padding-inner * 1.25;
   }
 
@@ -152,7 +148,7 @@
       border-top: 0;
     }
 
-    @include respond-to(small) {
+    @include breakpoint(sm) {
       font-size: 2rem;
     }
   }
@@ -166,7 +162,7 @@
       color: $color-gray-lighter;
       font-size: 2.4rem;
 
-      @include respond-to(small) {
+      @include breakpoint(sm) {
         font-size: 2.8rem;
       }
     }
@@ -186,7 +182,7 @@
   h4 {
     display: none;
 
-    @include respond-to(small) {
+    @include breakpoint(sm) {
       display: block;
     }
   }
@@ -204,7 +200,7 @@
   li {
     margin-left: 0.5em;
 
-    @include respond-to(small) {
+    @include breakpoint(sm) {
       margin-left: 1em;
     }
   }

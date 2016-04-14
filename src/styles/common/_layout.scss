@@ -1,6 +1,19 @@
+/*
+** Common - Layout
+** -----------------------------------------------------------------------------*/
 
-// Common - Layout
-//------------------------------------------------------------------------------
+.body-bag {
+  position: relative;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: $container-padding;
+  background: $color-white;
+  border: 1px solid $color-gray-lighter;
+
+  @include breakpoint(sm) {
+    padding: $container-padding-inner;
+  }
+}
 
 /* Container */
 .container {
@@ -8,7 +21,7 @@
   max-width: $container-width + 2 * $container-padding;
   margin: 0 auto;
 
-  @include respond-to(small) {
+  @include breakpoint(sm) {
     padding: $container-padding;
   }
 }
@@ -18,13 +31,13 @@
   background: $color-white;
   border: 1px solid $color-gray-lighter;
 
-  @include respond-to(small) {
+  @include breakpoint(sm) {
     padding: $container-padding-inner;
   }
 }
 
 .inner-content {
-  @include respond-to(small) {
+  @include breakpoint(sm) {
     float: left;
     width: 60%;
   }
@@ -33,7 +46,7 @@
 .inner-sidebar {
   margin-top: $container-padding-inner * 1.5;
 
-  @include respond-to(small) {
+  @include breakpoint(sm) {
     float: right;
     width: 40%;
     padding-left: 10%;
