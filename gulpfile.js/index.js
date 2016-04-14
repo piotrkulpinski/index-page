@@ -3,14 +3,14 @@
 var gulp    = require('gulp');
 var plugins = require('gulp-load-plugins')({ pattern: ['*', '!jshint'] });
 
-var config  = require('./package.json').config;
-var helpers = require('./gulp/helpers')(gulp, plugins, config);
+var config  = require('../package.json').config;
+var helpers = require('./helpers')(gulp, plugins, config);
 
 /**
  * Batch plugins loader
  */
-plugins.glob.sync('gulp/tasks/*').forEach(function (path) {
-  path = path.replace('gulp/', './gulp/');
+plugins.glob.sync('gulpfile.js/tasks/*').forEach(function (path) {
+  path = path.replace('gulpfile.js/', './');
   require(path)(gulp, plugins, config, helpers);
 });
 

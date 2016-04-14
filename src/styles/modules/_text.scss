@@ -1,0 +1,15 @@
+/*
+** Module - Text
+** -----------------------------------------------------------------------------*/
+
+.text {
+  color: $color-gray-light;
+
+  & + & {
+    margin-top: 1em;
+  }
+
+  &_lead {
+    color: $color-gray;
+  }
+}

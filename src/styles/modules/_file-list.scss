@@ -1,0 +1,47 @@
+/*
+** Module - File list
+** -----------------------------------------------------------------------------*/
+
+.file-list {
+  @include breakpoint(sm) {
+    margin-bottom: $container-padding-inner * 1.25;
+  }
+}
+
+.file-list__element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75em;
+  padding-top: 0.75em;
+  border-top: 1px solid $color-gray-lighter;
+  font-size: 1.6rem;
+
+  &:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 2rem;
+  }
+}
+
+.file-list__title {
+  > .fa {
+    float: left;
+    margin-right: 0.5em;
+    color: $color-gray-lighter;
+    font-size: 2.4rem;
+
+    @include breakpoint(sm) {
+      font-size: 2.8rem;
+    }
+  }
+
+  strong {
+    font-weight: normal;
+  }
+}

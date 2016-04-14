@@ -2,5 +2,124 @@
 ** Module - Content
 ** -----------------------------------------------------------------------------*/
 
-body {
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: $container-width;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: $container-padding;
+  background: $color-white;
+  border: 1px solid $color-gray-lighter;
+
+  @include breakpoint(sm) {
+    min-height: calc(100vh - #{$container-padding * 2});
+    padding: $container-padding-inner;
+  }
+}
+
+.content__head {
+  width: 100%;
+  padding-bottom: $container-padding-inner;
+
+  @include breakpoint(sm) {
+    padding-bottom: $container-padding-inner * 2;
+  }
+}
+
+.content__wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(sm) {
+    flex-direction: row;
+  }
+}
+
+.content__main {
+  width: 100%;
+
+  @include breakpoint(sm) {
+    width: 60%;
+  }
+}
+
+.content__sidebar {
+  width: 100%;
+  margin-top: $container-padding-inner * 1.5;
+
+  @include breakpoint(sm) {
+    width: 40%;
+    padding-left: 10%;
+    margin-top: 0;
+  }
+}
+
+.content__foot {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: $container-padding;
+  margin-top: $container-padding-inner;
+  border-top: 1px solid $color-gray-lighter;
+  color: $color-gray-light;
+  font-size: 1.4rem;
+  text-align: center;
+
+  @include breakpoint(sm) {
+    flex-direction: row;
+    padding-top: $container-padding-inner;
+    margin-top: $container-padding-inner * 2;
+  }
+}
+
+.content__title {
+  color: $color-red;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.4;
+
+  @include breakpoint(sm) {
+    font-size: 3.6rem;
+  }
+}
+
+.content__subtitle {
+  color: $color-gray;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.content__info {
+  &:first-child {
+    margin-bottom: 10px;
+
+    @include breakpoint(sm) {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+
+  a {
+    color: $color-gray;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    color: $color-gray;
+    font-weight: bold;
+  }
+
+  .fa {
+    margin-right: 5px;
+  }
 }

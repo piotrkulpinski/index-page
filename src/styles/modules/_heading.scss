@@ -1,0 +1,18 @@
+/*
+** Module - Heading
+** -----------------------------------------------------------------------------*/
+
+.heading {
+  margin-top: $container-padding * 1.5;
+  margin-bottom: $container-padding;
+  font-size: 2rem;
+  font-weight: 600;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 2.6rem;
+  }
+}

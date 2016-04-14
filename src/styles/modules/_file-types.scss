@@ -1,0 +1,38 @@
+/*
+** Module - File types
+** -----------------------------------------------------------------------------*/
+
+.file-types {
+  font-size: 1.4rem;
+  text-align: right;
+
+  @include breakpoint(sm) {
+    margin-left: 1em;
+  }
+
+  h4 {
+    display: none;
+
+    @include breakpoint(sm) {
+      display: block;
+    }
+  }
+
+  p {
+    color: $color-gray-light;
+  }
+
+  h4,
+  ul,
+  li {
+    float: left;
+  }
+
+  li {
+    margin-left: 0.5em;
+
+    @include breakpoint(sm) {
+      margin-left: 1em;
+    }
+  }
+}
