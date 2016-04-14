@@ -7,7 +7,12 @@ var templatesTask = function (gulp, plugins, config, helpers) {
 
     var stream = gulp.src(src)
       .pipe(plugins.plumber(helpers.onError))
-      .pipe(plugins.twig({ errorLogToConsole: true }))
+      .pipe(plugins.twig({
+        errorLogToConsole: true,
+        data: {
+          files: ['About Us', 'Contact Info', 'Shopping Cart']
+        }
+      }))
       .pipe(plugins.prettify({ indent_size: 2, preserve_newlines: true, extra_liners: [] }))
       // .pipe(plugins.inlineSource())
       .pipe(gulp.dest(dest))
