@@ -30,14 +30,4 @@ nbproject
 
 # Folders to ignore
 .sass-cache
-.tmp
 node_modules
-bower_components
-
-# Other
-validation-report.json
-validation-status.json
-.ruby-version
-.ruby-gemset
-csstoc.json
-dev-vhost.conf
