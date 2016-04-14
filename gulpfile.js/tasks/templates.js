@@ -10,13 +10,22 @@ var templatesTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.twig({
         errorLogToConsole: true,
         data: {
+          title: 'Project template',
+          startedOn: 'Mar 30, 2015',
+          info: 'Powered by <a href="https://github.com/piotrkulpinski/generator-limelight" target="_blank"><strong>generator-limelight</strong></a>',
           files: ['About Us', 'Contact Info', 'Shopping Cart']
         }
       }))
+      .pipe(gulp.dest(dest));
+
+    stream
       .pipe(plugins.prettify({ indent_size: 2, preserve_newlines: true, extra_liners: [] }))
-      // .pipe(plugins.inlineSource())
+      .pipe(plugins.inlineSource())
       .pipe(gulp.dest(dest))
-      .on('end', plugins.browserSync.reload);
+      .on('end', function () {
+        plugins.del(config.paths.dest + '/styles');
+        plugins.browserSync.reload();
+      });
 
     return stream;
   });

@@ -19,9 +19,14 @@ plugins.glob.sync('gulpfile.js/tasks/*').forEach(function (path) {
  */
 gulp.task('build', function () {
   plugins.del([config.paths.dest]).then(function () {
-    gulp.start(['styles', 'templates']);
+    gulp.start('build');
   });
 });
+
+/**
+ * Build task
+ */
+gulp.task('build', ['styles', 'templates']);
 
 /**
  * Default task
@@ -31,6 +36,6 @@ gulp.task('default', function () {
     server: './'
   })
 
-  gulp.watch(config.paths.src + '/styles/**/*', ['styles', 'templates']);
-  gulp.watch(config.paths.src + '/templates/**/*', ['templates']);
+  gulp.watch(config.paths.src + '/styles/**/*', ['build']);
+  gulp.watch(config.paths.src + '/templates/**/*', ['build']);
 });

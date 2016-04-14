@@ -1,5 +1,7 @@
 <footer class="content__foot">
-  <p class="content__info"><i class="fa fa-clock-o"></i> Started on: <strong>Mar 30, 2015</strong></p>
-  <p class="content__info"><i class="fa fa-code"></i> Powered by <a href="https://github.com/piotrkulpinski/generator-limelight" target="_blank"><strong>generator-limelight</strong></a></p>
+  <p class="content__info"><i class="fa fa-clock-o"></i> Started on: <strong>{{ startedOn }}</strong></p>
+  {% if info %}
+    <p class="content__info"><i class="fa fa-info"></i> {{ info }}</p>
+  {% endif %}
 </footer>
 <!-- /.content__foot -->
